@@ -31,7 +31,7 @@ impl crate::Operator for Operator {
     fn new(node: &Self::TopoNode) -> Self {
         Self {
             _handle: node.0.clone(),
-            scheme: [AttnMask::Causal]
+            scheme: [AttnMask::Causal, AttnMask::None]
                 .map(|mask| (mask, Scheme::new(&node.0, mask)))
                 .into_iter()
                 .collect(),
